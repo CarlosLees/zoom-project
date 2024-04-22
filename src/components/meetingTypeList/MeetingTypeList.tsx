@@ -2,13 +2,11 @@
 
 import { useState } from 'react';
 
-import { useRouter } from 'next/navigation';
-
 import HomeCard from '@/components/meetingTypeList/homeCard/HomeCard';
 import MeetingModal from '@/components/meetingTypeList/meetingModal/MeetingModal';
 
 const MeetingTypeList = () => {
-    const router = useRouter();
+    // const router = useRouter();
 
     const [meetingState, setMeetingState] = useState<
         'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined
