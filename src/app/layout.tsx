@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import React from 'react';
 import { ClerkProvider } from '@clerk/nextjs';
 
+import { Toaster } from '@/components/ui/toaster';
+
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -26,7 +28,10 @@ export default function RootLayout({
             }}
         >
             <html lang="en">
-                <body className={`${inter.className} bg-dark-2`}>{children}</body>
+                <body className={`${inter.className} bg-dark-2`}>
+                    <main>{children}</main>
+                    <Toaster />
+                </body>
             </html>
         </ClerkProvider>
     );
