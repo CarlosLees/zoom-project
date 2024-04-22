@@ -12,6 +12,7 @@ const Home = () => {
 
     const date = new Intl.DateTimeFormat('chinese', {
         dateStyle: 'full',
+        timeZone: 'Asia/Shanghai',
     }).format(now);
 
     return (
