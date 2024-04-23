@@ -6,8 +6,8 @@ import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 
 import MeetingSetup from '@/components/meeting/meetingSetup/MeetingSetup';
 import MeetingRoom from '@/components/meeting/meetingRoom/MeetingRoom';
-import { useGetCallById } from '@/hooks/useGetCallById';
 import Loader from '@/components/loader/Loader';
+import { useGetCallById } from '@/hooks/useGetCallById';
 
 const Meeting = ({ params: { id } }: { params: { id: string } }) => {
     const { user, isLoaded } = useUser();
