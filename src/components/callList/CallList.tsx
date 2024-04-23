@@ -112,8 +112,8 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                                     : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${(meeting as Call).id}`
                             }
                             title={
-                                (meeting as Call).state?.custom.description.substring(0, 26) ||
-                                (meeting as CallRecording).filename.substring(0, 26) ||
+                                (meeting as Call).state?.custom.description ||
+                                (meeting as CallRecording).filename ||
                                 'No Description'
                             }
                             isPreviousMeeting={type === 'ended'}

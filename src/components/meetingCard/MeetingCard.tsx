@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 
-import { avatarImages } from '@/constants';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
+import { avatarImages } from '@/constants';
 
 interface MeetingCardProps {
     title: string;
@@ -46,7 +46,7 @@ const MeetingCard = ({
                 <div className="relative flex w-full max-sm:hidden">
                     {avatarImages.map((img, index) => (
                         <Image
-                            key={index}
+                            key={img}
                             src={img}
                             alt="attendees"
                             width={40}
