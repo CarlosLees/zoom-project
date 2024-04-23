@@ -14,6 +14,7 @@ import HomeCard from '@/components/meetingTypeList/homeCard/HomeCard';
 import MeetingModal from '@/components/meetingTypeList/meetingModal/MeetingModal';
 import { useToast } from '@/components/ui/use-toast';
 import { Textarea } from '@/components/ui/textarea';
+import { Input } from '@/components/ui/input';
 
 const MeetingTypeList = () => {
     const router = useRouter();
@@ -88,7 +89,7 @@ const MeetingTypeList = () => {
                 imageUrl="/icons/recordings.svg"
                 title="View Recordings"
                 description="Start an instant Meeting"
-                handleClick={() => setMeetingState('isJoiningMeeting')}
+                handleClick={() => router.push('/recordings')}
                 className="bg-purple-400"
             />
             <HomeCard
@@ -162,6 +163,23 @@ const MeetingTypeList = () => {
                 buttonText="Start Meeting"
                 handleClick={createMeeting}
             />
+
+            <MeetingModal
+                isOpen={meetingState === 'isJoiningMeeting'}
+                onClose={() => setMeetingState(undefined)}
+                title="Type the link here"
+                className="text-center"
+                buttonText="Join Meeting"
+                handleClick={() => {
+                    router.push(values.link);
+                }}
+            >
+                <Input
+                    placeholder="Meeting link"
+                    onChange={(e) => setValues({ ...values, link: e.target.value })}
+                    className="border-none text-black bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+            </MeetingModal>
         </section>
     );
 };
